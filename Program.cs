@@ -20,22 +20,22 @@ class Program
             switch (selectedOption)
             {
                 case 1:
-                    generatePlusGame();
+                    GeneratePlusGame();
                     break;
                 case 2:
-                    generateMinusGame();
+                    GenerateMinusGame();
                     break;
                 case 3:
-                    generateMultiplyGame();
+                    GenerateMultiplyGame();
                     break;
                 case 4:
-                    generateDivideGame();
+                    GenerateDivideGame();
                     break;
                 case 5:
-                    showHistory();
+                    ShowHistory();
                     break;
                 case 6:
-                    stopPlaying();
+                    StopPlaying();
                     break;
                 default:
                     Console.WriteLine("Please select from 1 to 6");
@@ -44,10 +44,10 @@ class Program
         }
     }
 
-    static void generatePlusGame()
+    static void GeneratePlusGame()
     {
-        int leftOperand = generateRandomInteger(0, 10);
-        int rightOperand = generateRandomInteger(0, 10);
+        int leftOperand = GenerateRandomInteger(0, 10);
+        int rightOperand = GenerateRandomInteger(0, 10);
         int sum = leftOperand + rightOperand;
         Console.WriteLine("Please enter the answer:");
         Console.Write($"{leftOperand} + {rightOperand} = ");
@@ -64,10 +64,10 @@ class Program
         }
     }
 
-    static void generateMinusGame()
+    static void GenerateMinusGame()
     {
-        int leftOperand = generateRandomInteger(0, 10);
-        int rightOperand = generateRandomInteger(0, 10);
+        int leftOperand = GenerateRandomInteger(0, 10);
+        int rightOperand = GenerateRandomInteger(0, 10);
         int difference = leftOperand - rightOperand;
         Console.WriteLine("Please enter the answer:");
         Console.Write($"{leftOperand} - {rightOperand} = ");
@@ -84,10 +84,10 @@ class Program
         }
     }
 
-    static void generateMultiplyGame()
+    static void GenerateMultiplyGame()
     {
-        int leftOperand = generateRandomInteger(0, 10);
-        int rightOperand = generateRandomInteger(0, 10);
+        int leftOperand = GenerateRandomInteger(0, 10);
+        int rightOperand = GenerateRandomInteger(0, 10);
         int product = leftOperand * rightOperand;
         Console.WriteLine("Please enter the answer:");
         Console.Write($"{leftOperand} * {rightOperand} = ");
@@ -104,10 +104,10 @@ class Program
         }
     }
 
-    static void generateDivideGame()
+    static void GenerateDivideGame()
     {
-        int quotient = generateRandomInteger(1, 11);
-        int rightOperand = generateRandomInteger(1, 11);
+        int quotient = GenerateRandomInteger(1, 11);
+        int rightOperand = GenerateRandomInteger(1, 11);
         int leftOperand = quotient * rightOperand;
 
         Console.WriteLine("Please enter the answer:");
@@ -125,7 +125,7 @@ class Program
         }
     }
 
-    static void showHistory()
+    static void ShowHistory()
     {
         if (histories.Count == 0)
         {
@@ -141,13 +141,13 @@ class Program
         }
     }
 
-    static void stopPlaying()
+    static void StopPlaying()
     {
         shouldContinue = false;
         Console.WriteLine("Game over");
     }
 
-    static int generateRandomInteger(int min, int max)
+    static int GenerateRandomInteger(int min, int max)
     {
         Random rd = new Random();
         int randomNumber = rd.Next(min, max);
